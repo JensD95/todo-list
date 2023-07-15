@@ -27,10 +27,6 @@ export const store = configureStore({
 
 
 
-
-
-
-
 /*import {createStore, applyMiddleware} from 'redux';
 
 const reducer = (state, action) => {
