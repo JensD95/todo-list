@@ -12,13 +12,13 @@ export const todoServerAPI = {
             headers: {
                 'Content-Type': 'application/json'
             },
-            credentials: "same-origin"
         })
         return response.json();
 },
     deleteTask: async (id) => {
         let response = await fetch(THIS_ENDPOINT, id, {
             method: 'DELETE',
+            body: JSON.stringify(),
         })
         return response.json();
 },
@@ -29,7 +29,6 @@ export const todoServerAPI = {
             headers: {
                 'Content-Type': 'application/json'
             },
-            credentials: "same-origin"
         })
     }
 }

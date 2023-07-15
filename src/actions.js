@@ -13,6 +13,8 @@ export const postNewTask = (title) => {
         if (response.ok) {
             dispatch(updateState())
         }
+        let serverState = await todoServerAPI.getTasks()
+        dispatch({type: "SET_SERVER_STATE", serverState})
     }
 }
 
@@ -22,6 +24,9 @@ export const deleteTask = (id) => {
         if (response.ok) {
             dispatch({type: 'DELETE_TASK', id: id})
         }
+        let serverState = await todoServerAPI.getTasks({
+        })
+        dispatch({type: "SET_SERVER_STATE", serverState})
     }
 }
 
@@ -29,5 +34,7 @@ export const changeTask = (id, title, isCompleted, description) => {
     return async (dispatch) => {
         await putTask(id, title, isCompleted, description)
         dispatch(updateState())
+        let serverState = await todoServerAPI.getTasks()
+        dispatch({type: "SET_SERVER_STATE", serverState})
     }
 }

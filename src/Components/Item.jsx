@@ -30,7 +30,6 @@ export const Item= ({id, isCompleted, title, description, dispatch}) => {
     const [taskDescription, setTaskDescription] = useState(description);
 
     const setIsCompleted = () => {
-        //dispatch({type: 'SET_IS_COMPLETED', id: id})
         dispatch(changeTask(id, title, !isCompleted, taskDescription))
     }
     return (

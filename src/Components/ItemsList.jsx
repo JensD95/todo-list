@@ -14,11 +14,11 @@ export const ItemsList = (props) => {
     return (
         <>
         <Grid container >
-            {store.map(el => <Item key={el.id}
-            id={el.id}
-            isCompleted={el.isCompleted}
-            title={el.title}
-            description={el.description}
+            {store.map(e => <Item key={e.id}
+            id={e.id}
+            isCompleted={e.isCompleted}
+            title={e.title}
+            description={e.description}
             dispatch={props.dispatch} />
             )}
         </Grid>
